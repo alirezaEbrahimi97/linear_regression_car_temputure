@@ -48,6 +48,8 @@ y_predict_np = np.array(y_predict)
 dis = y_test.to_numpy() - y_predict_np
 plt.plot(np.absolute(dis))
 plt.show()
-print("mean of ablsolute_distance: ", np.absolute(dis).sum() / dis.shape[0])
 
+
+print("mean square of distance: ", (((dis**2).sum())/dis.shape[0])**0.5)
+print("mean of ablsolute_distance: ", np.absolute(dis).sum() / dis.shape[0])
 print("max and min of ambient", df['ambient'].max(), df['ambient'].min())
